@@ -1,0 +1,4 @@
+flask==2.0.1
+pyTelegramBotAPI==4.6.0
+gunicorn==20.1.0
+python-binance==1.0.16

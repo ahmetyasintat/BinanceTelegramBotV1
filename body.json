@@ -1,0 +1,25 @@
+{
+    "time":"{{timenow}}",
+    "exchange":"{{exchange}}",
+    "ticker":"{{ticker}}",
+    "bar":{
+        "time":"{{time}}",
+        "open":"{{open}}",
+        "high":"{{high}}",
+        "low":"{{low}}",
+        "close":"{{close}}",
+        "volume":"{{volume}}"
+
+    },
+    "startegy":{
+        "position_size":"{{startegy.position_size}}",
+        "order_action":"{{startegy.order.action}}",
+        "order_contracts": "{{startegy.order.contracts}}",
+        "order_price":"{{startegy.order.price}}",
+        "order_id":"{{startegy.order.id}}",
+        "market_position":"{{startegy.market_position}}",
+        "market_position_size":"{{startegy.market_position_size}}",
+        "prev_market_position":"{{startegy.prev_market_position}}",
+        "prev_market_position_size":"{{prev_market_position_size}}"
+    }
+}
