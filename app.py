@@ -10,7 +10,6 @@ app = Flask(__name__)
 
 client = Client(config.api_key, config.api_secret)
 
-#binance order fonksiyonu
 def order(side, quantity, symbol, order_type=ORDER_TYPE_MARKET):
     try:
         print(f"sending order {order_type} - {side} {quantity} {symbol}")
@@ -27,13 +26,11 @@ def order(side, quantity, symbol, order_type=ORDER_TYPE_MARKET):
 @app.route("/webhook", methods=["POST"])
 def webhook():
 
-    #json dosya tipinin okunmasını 
     data = json.loads(request.data)
     side = data["startegy"]["order_action"].upper()
     quantity = data["startegy"]["order_contracts"]
     ticker = data["ticker"]
 
-    #telegrama sinyal hakkında mesaj göndermek için
     telebot.TeleBot(config.telegramBotApi).send_message(
         config.telegramUserId,
         f"""{data["time"]}
@@ -43,7 +40,6 @@ def webhook():
                                                                         """,
     )
 
-    #binance emir verme 
     order_response = order(side, quantity, ticker)
     print(order_response)
 
